@@ -9,12 +9,20 @@ class PagesController < ApplicationController
   def home
   end
 
-  # back-end code for pages/profile
-  def profile
-  end
-
-  # back-end code for pages/explore
-  def explore
-  end
+   # back-end code for pages/profile
+   def profile
+     # Grab username from the URL, as :id
+   if (User.find_by_username(params[:id]))
+     @username = params[:id]
+   else
+     # Redirect to 404 (Currently root)
+      redirect_to root_path, :notice=> "The User was not found in our database"
+   end
+  
+   end
+  
+     # back-end code for pages/explore
+     def explore
+     end
   
 end
