@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# Using the device gem for authentification and user accounts
+gem 'devise'
 #for Twitter components e.g. navbars
 gem 'bootstrap-sass', '~> 3.3.6'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
