@@ -12,13 +12,25 @@
         </div>
     </div>
         <div class="col-xs-6">
-        <% for @p in @posts %>
-        <div class="panel panel-default">
-         <div class="panel-body">
-        <p><%= @p.content %></p>
+            <%= render '/components/post_form' %><br></br>
+        
+            <% for @p in @posts %>
+            <div class="panel panel-default post-panel">
+             <div class="panel-body">
+                <div class="col-sm-1">
+                  AVATAR
+                </div>
+                <div class="col-sm-11">
+                    <p><%= @p.content %></p>
+                </div>
+                <div class="col-sm-12">
+                  LINKS
+                </div>
+                                     
+             </div>
             </div>
-        </div>
-        <% end %>
+            <% end %>
+        
     </div>
     <div class="col-xs-3">
         <div class="panel panel-default">

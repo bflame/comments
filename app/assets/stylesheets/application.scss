@@ -13,3 +13,28 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body {
+    background-color: rgba(212,216,212, 0.25);
+}
+
+.navbar {
+    background-color: white;
+}
+
+.btn-post {
+    color: #FFFFFF;
+    background-color: #CC3333;
+}
+
+.btn-post:hover {
+  background-color: #ebebeb;
+}
+
+.navbar-brand {
+    position:absolute;
+    left: 50%;
+}
+.post-panel {
+    margin-top: -21px;
+}

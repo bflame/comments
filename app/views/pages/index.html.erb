@@ -1,2 +1,78 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<% if !user_signed_in? # If the user isn't signed in %>
+
+<style>
+        body {
+            background: linear-gradient(
+            rgba(0,0,0, 0.5),
+            rgba(0,0,0, 0.5)
+            ), url("/bj.jpg") no-repeat center center fixed;
+        
+        ;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+    h1 {
+        color: white;
+        font-weight: bold;
+    }
+    .container-index {
+        margin-right: 15%;
+        margin-left: 15%;
+    }
+    .text {
+        color: white;
+        font-size: 150%;
+    }
+    .footer-links {
+        text-aligns: center;
+        color: white;
+        margin-top: 10%;
+    }
+    .log-in {
+        float: right;
+        width: 300px;
+        height: 150px;
+    }
+    .sign-up {
+        float: right;
+        width: 300px;
+        height: 250px;
+    }
+</style>
+
+<div class="container-index row">
+   <div class="col-sm-6">
+        <h1>Welcome to Rewbi.</h1>
+        <p class="text">
+            Let's do something different. Instead of liking your friends<br>
+            comments, how about you give them gems? Rewbi provides <br>
+            a common interface of most social medias however delivers a <br>
+            more seamless and responsive way to connect with your friends.
+        </p>
+   </div>
+   <div cla ss="col-sm-6">
+       <div class="log-in panel">
+           Log In
+       </div>
+       
+       <div class="sign-up panel">
+           Sign Up
+       </div>
+        
+    </div>
+    
+    <center>
+    <div class="col-sm-12">
+        <p class="footer-links">About | Help Cookies | Terms | Privacy | Advertise | Developers © <%= Time.now.year %> Rewbi</p>
+    </div>
+    </center>
+    
+</div>
+
+<% else # If signed in %>
+
+    <script>document.location = "/home"</script>
+
+<% end %>
