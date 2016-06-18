@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   
   devise_for :users
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
+  resources :relationships, only: [:create, :destroy]
   resources :posts
   # Define Root URL
   root 'pages#index'
@@ -9,7 +15,13 @@ Rails.application.routes.draw do
   get '/home' => 'pages#home' # override default routes.
   get '/user/:id' => 'pages#profile'
   get '/explore'=> 'pages#explore'
-
+  get '/about'=> 'pages#about'
+  get '/help'=> 'pages#help'
+  get '/cookies'=> 'pages#cookies'
+  get '/terms'=> 'pages#terms'
+  get '/advertise'=> 'pages#advertise'
+  get '/developers'=> 'pages#developers'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

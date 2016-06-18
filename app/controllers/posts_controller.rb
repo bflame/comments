@@ -17,8 +17,13 @@ class PostsController < ApplicationController
         end
     end
     
+    def show
+         @user = User.find(params[:id])
+         @p = @user.posts
+    end
     
     private
+    
     def post_params # Certain data is passed via form
         params.require(:post).permit(:user_id, :content)
         

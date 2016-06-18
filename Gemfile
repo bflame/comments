@@ -1,13 +1,18 @@
 source 'https://rubygems.org'
+ruby "2.3.0"
 
+# Auto Link Gem - for converting plain URL text into Links
+gem 'rails_autolink'
 # Using the device gem for authentification and user accounts
 gem 'devise'
 #for Twitter components e.g. navbars
 gem 'bootstrap-sass', '~> 3.3.6'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# Heroku connection
+gem 'pg'
+# Heroku pre-req
+gem 'rails_12factor', group: :production # Not to be used locally, only on the Heroku database so it's accessible publically
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

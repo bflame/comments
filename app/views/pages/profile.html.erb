@@ -1,40 +1,79 @@
-<div class="row">
-    <div class="col-xs-12">
-        <div class="jumbotron">
-            <%= @username %>
-        </div>
-    </div>
-</div>
 <! -- Begin row 2 -- >
 <div class="row">
     <div class="col-xs-3">
-        <div class="panel panel-default">
-          <div class="panel-body">
-        <p>profile</p>
-            </div>
+        <div class="col-sm-12" style="margin-top: -250px">
+           <img src="/profile.png" class="rounded-img" height="200px" width="200px"></img>            
+        </div>
+        <div class="col-sm-12" style="margin-top: -30px">
+          <h1 style="font-weight: bold;"><%= params[:id] %></h1>
+          <p>I'm just a guy who likes to eat stuff. That and make social media clones like Rewbi.</p>
         </div>
     </div>
     <div class="col-xs-6">
-        <%= render '/components/post_form' %>
+        <%= render '/components/post_form' %><br></br>
+        
+            <% for @p in @posts %>
+            <div class="panel panel-default post-panel">
+             <div class="panel-body">
+                <div class="col-sm-5">
+                   <img src="/profile.png" class="rounded-img" height="70px" width="70px"></img>
+                </div>
+                <div class="col-sm-6">
+                    <p class="post-title"><span class="post-owner"><a href="/user/<%= User.find(@p.user_id).username %>"><%= User.find(@p.user_id).username %></a></span> <span class="post-creation">- <%= @p.created_at.to_formatted_s(:short) %></span></p>
+                    <p class="post-content"><%= @p.content %></p>
+                </div>
+                <center>
+                <div class="col-sm-12">
+                  <p class="post-links">
+                      
+                      <span class="glyphicon glyphicon-comment g-links" aria-hidden="true"></span>
+                      <span class="glyphicon glyphicon-retweet g-links" aria-hidden="true"></span>
+                      <img class="imgmode g-links" src="/rubyit.svg" height="5%" width="23px"></img>
+                      <span class="glyphicon glyphicon-trash g-links" aria-hidden="true"></span>
+                      <a href="">View Conversation</a>
+                      
+                  </p>
+                </div>
+                </center>
+                                     
+             </div>
+            </div>
+            <% end %>
+            
 
-        <% for @p in @posts %>
-        <div class="panel panel-default">
-         <div class="panel-body">
-        <p><%= @p.content %></p>
+            <div class="panel panel-default post-panel">
+             <div class="panel-body row">              
+                <div class="col-sm-12">
+                 <center><a href="#top"><p class="opacity: 0.7;">Return to the surface</p></a></center>
+                </div>
             </div>
         </div>
-        <% end %>
-    </div>
+            
+        </div>
     <div class="col-xs-3">
+        
+        <%= render '/components/follow_button', :user => User.find_by_username(params[:id]) %>
+        
         <div class="panel panel-default">
           <div class="panel-body">
-        <p>who to follow</p>
-        </div>
-        </div>
+        <h5 style="color: grey; font-size: 125%;">Who to follow</h5>
+              <% for @u in @toFollow do %>
+                   <p style="font-weight: bold; opacity: 0.85;" ><a href="/user/<%= @u.username %>"><%= @u.username %></a></p>
+              <% end %>
+       </div>
+      </div>
+        
         <div class="panel panel-default">
           <div class="panel-body">
-            <p>trends</p>
+                <h5 style="color: grey; font-size: 120%">Trends</h5>
+                  <a href="">#Trend1</a><br>
+                      <span style="color: grey;">315k Posts</span><br></br>
+                  <a href="">#Trend2</a><br>
+                      <span style="color: grey;">140k Posts</span><br></br>
+                  <a href="">#TrendShoe</a><br>
+                      <span style="color: grey;">609k Posts</span><br></br>
+                  <a href="">#TrendDriveThru</a><br>
+                      <span style="color: grey;">315mil Posts</span></br>
             </div>
         </div>
     </div>
-</div>

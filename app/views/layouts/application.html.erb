@@ -9,6 +9,28 @@
 <body>
 <%= render 'layouts/nav' %>
 
+<% if params[:id] !=nil %>
+  <% @url = '/user/' + params[:id] %>
+  <% if current_page?(@url) %>
+    <img src="/background.JPG" class="profile-banner"></img>
+    <div class="row">
+      <div class="col-sm-12" style="background-color: white;">
+        <div class="container">
+          <div class="col-sm-3"> </div>
+           <div class="col-sm-6" style="padding: 15px;">
+            <div class="col-sm-2" style="font-size: 100%; opacity: 0.7">Posts<br>
+                        <h6 style="color: #AB2837; font-size: 250%;"><%= User.find_by_username(params[:id]).posts.count %></h6></div>
+                        <div class="col-sm-2" style="font-size: 100%; opacity: 0.7">Following<br>
+                        <h6 style="color: #AB2837; font-size: 250%;"><%= User.find_by_username(params[:id]).following.count %></h6></div>
+                        <div class="col-sm-2" style="font-size: 100%; opacity: 0.7">Followed<br>
+                        <h6 style="color: #AB2837; font-size: 250%;"><%= User.find_by_username(params[:id]).followers.count %></h6></div>
+          <div class="col-sm-8" style="text-align: right; margin-left: 37.5%; margin-top: -12.5%"><a href="/users/edit"><li type="button" class="btn btn-default" style="color: grey; opacity: 0.8">Edit Profile</li></a></div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
 <div class="container">
       <span class="notice"><%= notice %></span>
     <span class="alert"><%= alert %></span>

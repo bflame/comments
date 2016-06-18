@@ -1,0 +1,24 @@
+{
+  "name": "",
+  "css_prefix_text": "icon-",
+  "css_use_suffix": false,
+  "hinting": true,
+  "units_per_em": 1000,
+  "ascent": 850,
+  "glyphs": [
+    {
+      "uid": "a5914d053c5f77da9b15de5a0fcc88e4",
+      "css": "rubyit",
+      "code": 59392,
+      "src": "custom_icons",
+      "selected": true,
+      "svg": {
+        "path": "M64 105.8C28.4 158.9 0 204.4 0.9 206.7 5 217.9 575.2 1004 578.8 1004 582 1004 1123.9 257.6 1155 210.3 1157.7 206.2 1137.4 174.2 1089.6 106.7L1021.2 8.9 128.4 9.4 64 105.8Z",
+        "width": 1157.2265625
+      },
+      "search": [
+        "rubyit"
+      ]
+    }
+  ]
+}

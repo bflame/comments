@@ -30,6 +30,9 @@ body {
 .btn-post:hover {
   background-color: #ebebeb;
 }
+.btn-post:active{
+    background:#d1d1d1;
+}
 
 .navbar-brand {
     position:absolute;
@@ -37,4 +40,100 @@ body {
 }
 .post-panel {
     margin-top: -21px;
+}
+.post-title {
+    text-align:left;
+    margin-left: -50%;
+}
+.post-content {
+    text-align:left;
+    margin-left: -50%;
+}
+.post-links {
+    text-align: left;
+}
+.post-owner {
+    color: black;
+    font-weight: bold;
+}
+.rounded-img {
+    border-radius: 5%;
+}
+.rounded-img2 {
+    border-radius: 15%;
+}
+.post-creation {
+    opacity: 0.7;
+}
+.g-links {
+    opacity: 0.7;
+    font-size: 120%;
+    margin-right: 65px;
+    margin-top: 10px;
+}
+.post-form-panel {
+    margin-bottom: -10px;
+}
+.imgmode {
+    margin-top: -1px;
+    opacity: 0.6;
+}
+ .panel-footer {
+    background-color: white;
+}
+ .profile-banner {
+    width: 100%;
+    height: 500px;
+    margin-top: -21px;
+}
+.panel-image img.panel-image-preview {
+    width: 100%;
+    border-radius: 4px 4px 0px 0px;
+}
+.panel-heading ~ .panel-image img.panel-image-preview {
+    border-radius: 0px;
+}
+.panel-image ~ .panel-body, .panel-image.hide-panel-body ~ .panel-body {
+    overflow: hidden;
+}
+.panel-image ~ .panel-footer a {
+    padding: 0px 10px;
+    font-size: 1.3em;
+    color: rgb(100, 100, 100);
+}
+.panel-image.hide-panel-body ~ .panel-body {
+    height: 0px;
+    padding: 0px;
+}
+.panel-footer {
+    background-color: white;
+}
+.home-avatar {
+    margin-bottom: 25px;
+}
+.profile-banner {
+    margin-top: -1.5%;
+    width: 100%;
+}
+.btn-follow {
+    color: #FFFFFF;
+    background-color: #a92525;
+}
+
+.btn-follow:hover {
+  background-color: #ebebeb;
+}
+.btn-follow:active{
+    background:#d1d1d1;
+}
+.btn-sign {
+    color: #CC3333;
+    background-color: #ebebeb;
+}
+
+.btn-sign:hover {
+  background-color: #d1d1d1;
+}
+.btn-sign:active{
+    background:#CC3333;
 }
